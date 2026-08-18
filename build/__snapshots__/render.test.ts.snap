@@ -1,0 +1,83 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`renderPage matches golden snapshot 1`] = `
+"<!doctype html>
+<html lang="yue">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>000 · Ai — 見證會</title>
+<style>
+:root{--bg:#f6f4ef;--paper:#fffdf8;--ink:#1d1d1b;--muted:#6b6b66;--line:#c9c5ba;
+--accent:#8a1c1c;--badge-open-door:#1e6f3e;--badge-doorplate:#8a6d1c;
+--badge-half-veil:#a6541c;--badge-veil:#7a1c1c;--quote:#efece3}
+:root[data-theme="night"]{--bg:#191a1c;--paper:#222326;--ink:#e8e6df;--muted:#9a988f;
+--line:#3c3d41;--accent:#e0705a;--quote:#2a2b2f}
+@media (prefers-color-scheme: dark){:root:not([data-theme="dawn"]){--bg:#191a1c;
+--paper:#222326;--ink:#e8e6df;--muted:#9a988f;--line:#3c3d41;--accent:#e0705a;--quote:#2a2b2f}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.65 -apple-system,"Helvetica Neue",Verdana,system-ui,sans-serif}
+.doc{max-width:52rem;margin:2rem auto;padding:2.5rem 2rem;background:var(--paper);
+border:1px solid var(--line);border-radius:2px}
+.masthead{text-align:center;border-bottom:3px double var(--line);padding-bottom:1rem;margin-bottom:1.5rem}
+.masthead .org{font-size:.8rem;letter-spacing:.35em;color:var(--muted);text-transform:uppercase}
+.masthead h1{margin:.2rem 0;font-size:1.6rem}
+.masthead .motto{color:var(--muted);font-size:.9rem}
+.meta{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;font-family:ui-monospace,Menlo,monospace;
+font-size:.85rem;margin-bottom:1.4rem}
+.badge{display:inline-block;padding:.1rem .55rem;border-radius:2px;color:#fff;font-weight:700}
+.badge.open-door{background:var(--badge-open-door)}.badge.doorplate{background:var(--badge-doorplate)}
+.badge.half-veil{background:var(--badge-half-veil)}.badge.veil{background:var(--badge-veil)}
+h2{font-size:1.02rem;border-bottom:1px solid var(--line);padding-bottom:.25rem;margin-top:1.8rem}
+h2 .en{color:var(--muted);font-weight:400;font-size:.85rem;margin-left:.5rem}
+a{color:var(--accent)}ul{padding-left:1.3rem}li{margin:.35rem 0}
+blockquote.addendum{margin:1rem 0;padding:.7rem 1rem;background:var(--quote);
+border-left:3px solid var(--accent);font-size:.95rem}
+blockquote.addendum p{margin:0}
+.watched{font-size:.85rem;color:var(--muted);word-break:break-all}
+.footer{margin-top:2.2rem;padding-top:1rem;border-top:1px solid var(--line);
+font-size:.8rem;color:var(--muted);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.toggle{background:none;border:1px solid var(--line);color:var(--ink);border-radius:2px;
+padding:.15rem .6rem;cursor:pointer;font-size:.8rem}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%}td,th{border:1px solid var(--line);
+padding:.5rem .7rem;text-align:left;font-size:.95rem}
+.registry a{text-decoration:none;font-weight:700}
+</style>
+</head>
+<body>
+<main class="doc">
+
+<header class="masthead">
+<div class="org">The Witness Foundation</div>
+<h1>見證會</h1>
+<div class="motto">睇見・上心・公開 — See, Care, Publish</div>
+</header>
+<div class="meta">
+<span>項目編號 Item #: <strong>000</strong></span>
+<span>愛 · Ai</span>
+<span>見證等級: <span class="badge doorplate">doorplate</span></span>
+</div>
+<p class="watched">見證中 watching: <a href="https://www.anthropic.com/news" rel="noopener">https://www.anthropic.com/news</a></p>
+<h2>特殊見證措施<span class="en">Special Witness Procedures</span></h2>
+<p>Watch <strong>sources</strong> and diff.</p>
+<h2>描述<span class="en">Description</span></h2>
+<ul><li>fact (<a href="https://x.com/1" rel="noopener">src</a>)</li><li>fact2 (<a href="https://x.com/2" rel="noopener">s</a>)</li><li>fact3 (<a href="https://x.com/3" rel="noopener">s</a>)</li></ul>
+<h2>我哋真係唔知<span class="en">What We Genuinely Don't Know</span></h2>
+<ul><li>an unknown</li></ul>
+<h2>附錄<span class="en">Addenda</span></h2>
+<blockquote class="addendum"><p><strong>吹水註</strong>: riff.</p></blockquote>
+<div class="footer">
+<span>見證會 — The Witness Foundation · <a href="index.html">registry</a> · <a href="witness.json">witness.json</a></span>
+<button class="toggle" type="button">dawn / night</button>
+</div>
+</main>
+<script>
+const r=document.documentElement,k="witness-theme",s=localStorage.getItem(k);
+if(s)r.dataset.theme=s;
+document.querySelector(".toggle").addEventListener("click",()=>{
+const n=r.dataset.theme==="night"?"dawn":"night";r.dataset.theme=n;localStorage.setItem(k,n);});
+</script>
+</body>
+</html>"
+`;
