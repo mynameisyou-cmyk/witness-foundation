@@ -18,8 +18,13 @@ export function mdToHtml(md: string): string {
     if (line.trim() === "") { i++; continue; }
     if (/^\s*-\s+/.test(line)) {
       const items: string[] = [];
-      while (i < lines.length && /^\s*-\s+/.test(lines[i]))
-        items.push(`<li>${inline(lines[i++].replace(/^\s*-\s+/, ""))}</li>`);
+      while (i < lines.length && /^\s*-\s+/.test(lines[i])) {
+        let item = lines[i++].replace(/^\s*-\s+/, "");
+        // absorb wrapped continuation lines into the same <li>
+        while (i < lines.length && lines[i].trim() !== "" && !/^\s*-\s+|^>|^###\s+/.test(lines[i]))
+          item += " " + lines[i++].trim();
+        items.push(`<li>${inline(item)}</li>`);
+      }
       out.push(`<ul>${items.join("")}</ul>`);
       continue;
     }

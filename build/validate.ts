@@ -17,7 +17,15 @@ export function validate(doc: WitnessDoc): string[] {
   if (!doc.sections.unknowns)
     errors.push("我哋真係唔知: missing or empty — honest unknowns are mandatory");
 
-  const bullets = doc.sections.description.split("\n").filter(l => /^\s*-\s+/.test(l));
+  // A bullet = its "- " line plus any continuation lines until the next
+  // bullet or blank line (wrapped bullets are normal markdown).
+  const bullets: string[] = [];
+  let inBullet = false;
+  for (const line of doc.sections.description.split("\n")) {
+    if (/^\s*-\s+/.test(line)) { bullets.push(line); inBullet = true; }
+    else if (line.trim() === "" || /^>|^###\s/.test(line)) inBullet = false;
+    else if (inBullet) bullets[bullets.length - 1] += " " + line.trim();
+  }
   if (bullets.length < 3) errors.push(`描述: needs ≥3 cited fact bullets, found ${bullets.length}`);
   for (const b of bullets) {
     if (!/\[[^\]]+\]\(https?:\/\/[^)]+\)/.test(b))

@@ -54,3 +54,12 @@ describe("toWitnessJson", () => {
     expect(j.documents[0].class).toBe("doorplate");
   });
 });
+
+describe("mdToHtml — wrapped bullets", () => {
+  test("keeps continuation lines inside the same <li>", () => {
+    const h = mdToHtml("- line one\n  continues ([a](https://x.com/1))\n- second");
+    expect(h.match(/<li>/g)?.length).toBe(2);
+    expect(h).toContain('continues (<a href="https://x.com/1"');
+    expect(h).not.toContain("<p>");
+  });
+});

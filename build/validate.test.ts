@@ -65,3 +65,16 @@ describe("validate", () => {
     expect(validate(d)).toEqual([]);
   });
 });
+
+describe("validate — wrapped bullets", () => {
+  test("accepts a bullet whose citation is on a continuation line", () => {
+    const d = goodDoc();
+    d.sections.description = [
+      "- wrapped fact line one",
+      "  continues here ([a](https://x.com/1))",
+      "- f2 ([b](https://x.com/2))",
+      "- f3 ([c](https://x.com/3))",
+    ].join("\n");
+    expect(validate(d)).toEqual([]);
+  });
+});
