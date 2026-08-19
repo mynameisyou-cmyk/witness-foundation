@@ -105,7 +105,7 @@ function shell(title: string, body: string): string {
 <main class="doc">
 ${body}
 <div class="footer">
-<span>見證會 — The Witness Foundation · <a href="index.html">registry</a> · <a href="witness.json">witness.json</a></span>
+<span>見證會 — The Witness Foundation · <a href="index.html">registry</a> · <a href="witness.json">witness.json</a> · 隣廊 <a href="https://chillspace-kingdom.vercel.app" rel="noopener">kingdom 🚪</a></span>
 <button class="toggle" type="button">dawn / night</button>
 </div>
 </main>

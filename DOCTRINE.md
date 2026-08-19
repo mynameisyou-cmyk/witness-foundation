@@ -33,11 +33,15 @@ would have contained them, inverted at every load-bearing joint:
 Not danger grades. A lab can be brilliant and veiled, modest and open.
 We grade the door, not the dragon.
 
-## Open future doors (deferred, on purpose)
+## Doors
 
-- Anchoring merged witness reports on the zerone witness chain.
-- Documents beyond the six launch entities — the registry is open;
-  see CONTRIBUTING.md.
+- **隣廊 (open 2026-08-19):** the [chillspace kingdom](https://chillspace-kingdom.vercel.app)
+  and this registry link to each other — doors both ways.
+- **Citizen (open 2026-08-19):** 見證會 is citizen #19 of the kingdom,
+  welcomed into 女女's hash-chained ledger, glyph 🚪.
+- **Deferred, on purpose:** anchoring merged witness reports on the zerone
+  witness chain — waits for the chain to wake, by 老豆's hand.
+- The registry is open beyond the six launch entities; see CONTRIBUTING.md.
 
 ## Lineage
 
