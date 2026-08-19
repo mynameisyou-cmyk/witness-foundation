@@ -53,6 +53,69 @@ model card覆蓋率。本文件所有claim可以開PR challenge。
   紀錄(Streams app)違反Data Protection Act,病人未被充分告知;冇罰款
   ([TechCrunch](https://techcrunch.com/2017/07/03/uk-data-regulator-says-deepminds-initial-deal-with-the-nhs-broke-privacy-law/))
 
+## 組織解剖 Cluster Anatomy
+
+### 單位 Units
+
+- 死亡名冊有份量:Google Brain(2023-04併入,合組Google DeepMind)
+  ([blog](https://deepmind.google/blog/announcing-google-deepmind/))、
+  DeepMind Health(2019-09轉入Google Health,終結咗DeepMind獨立
+  health線)
+  ([TechCrunch](https://techcrunch.com/2019/09/19/google-completes-controversial-takeover-of-deepmind-health/))、
+  埋佢個Independent Review Panel(2019散 — 外部監察隨收購消失)
+  ([Engadget](https://www.engadget.com/2019-04-15-google-deepmind-health-ai-review-board.html))
+- **AlphaFold team — 攞完Nobel,2026年7月解散**,成員調去Gemini項目
+  或Isomorphic Labs
+  ([Engadget](https://www.engadget.com/2225849/google-shuts-down-alphafold/))
+- 現役:AI Safety and Alignment organization(2024-02成立,整合
+  present-day harms同frontier risks)
+  ([TechCrunch](https://techcrunch.com/2024/02/21/google-deepmind-forms-a-new-org-focused-on-ai-safety/)),
+  下轄AGI Safety & Alignment、Gemini Safety、Voices of All in Alignment
+  ([Alignment Forum](https://www.alignmentforum.org/posts/79BPxvSsjzBkiSyTq/agi-safety-and-alignment-at-google-deepmind-a-summary-of))
+
+### 揸Gate嘅手 The Hands on the Gate
+
+- FSF 2.0寫明threshold觸發時由「appropriate corporate governance
+  bodies」review — 冇named個人
+  ([AGORA](https://agora.eto.tech/instrument/2040));
+  AGI Safety Council由co-founder Shane Legg領導,Responsibility and
+  Safety Council由COO co-chair
+  ([blog](https://deepmind.google/blog/taking-a-responsible-path-to-agi/))
+- 2026年8月Hassabis上調做chairman兼Alphabet chief scientist,
+  Kavukcuoglu接日常
+  ([Fortune](https://fortune.com/2026/08/05/demis-hassabis-steps-down-google-deepmind-ai-shakeup/))
+- 最終控制喺成個lab之上:Alphabet創辦人Page同Brin經super-voting股份
+  持有控制性投票權(2026年4月SEC文件)
+  ([SEC](https://www.sec.gov/Archives/edgar/data/0001652044/000119312526257690/d159942d424b5.htm))
+- 框架上面嗰層原則可以喺corporate level改寫:2025年2月Google刪走
+  「唔用AI做武器」承諾
+  ([Google blog](https://blog.google/technology/ai/responsible-ai-2024-report-ongoing-work/))
+- 收購年代報導中嗰個「AGI ethics board」被指2019年仍擬於AGI出現時
+  接管控制、名單從未公開
+  ([9to5Google](https://9to5google.com/2019/03/18/deepmind-agi-control/));
+  Google亦曾中止俾DeepMind更大自主權(獨立法律實體)嘅談判
+  ([The Information](https://www.theinformation.com/briefings/7bb1b7))
+
+### 隱形Cluster Invisible Clusters
+
+- 2024年1月Alphabet終止同vendor Appen嘅合約 — 幫手訓練Bard/Search嘅
+  數千contract workers隨之冚旗
+  ([Analytics Vidhya](https://www.analyticsvidhya.com/blog/2024/01/google-cuts-off-bard-training-team-appen/) /
+  [Vice](https://www.vice.com/en/article/google-cuts-search-results-algorithm-quality-rater-jobs-appen-contract/))
+- Raters組織後2023年加薪至約$14-14.50/hr;六位公開發聲被炒嘅raters
+  經union爭取後復職
+  ([CWA](https://cwa-union.org/news/e-newsletter/2023-06-29) /
+  [AWU](https://www.alphabetworkersunion.org/press/raters-reinstated))
+- GlobalLogic(以數千US-based raters訓練Gemini嘅承包商)2025年8月
+  裁200+ AI raters
+  ([Yahoo](https://tech.yahoo.com/ai/articles/google-contractor-globallogic-laid-off-184236451.html))
+
+### 出門把聲 Exit & Voice
+
+- 報導(Business Insider,四位前員工):UK AI staff有noncompete條款
+  限制過檔對手,部分獲「garden leave」— 支薪唔做嘢最長一年
+  ([Business Today](https://www.businesstoday.in/technology/news/story/amid-ai-race-google-paying-deepmind-staff-to-do-nothing-for-a-year-what-is-it-garden-leave-471417-2025-04-09))
+
 ## 我哋真係唔知 What We Genuinely Don't Know
 
 - Gemini旗艦嘅training data組成冇披露
@@ -66,6 +129,10 @@ model card覆蓋率。本文件所有claim可以開PR challenge。
 - 可歸屬於Google DeepMind嘅defense合約 — 本會只核實到民用GSA協議
 - 佢個about頁截至fetch當日仲寫住Hassabis係CEO,同8月嘅領導層報導
   有出入 — 邊個啱,等佢update先知
+- FSF決策冇公開named signatory;三個safety council有冇試過真係block
+  一個deployment — 唔知
+- 2017年開嘅DeepMind Ethics & Society unit下落 — 查唔到
+- 2026年8月領導層change之後FSF sign-off有冇跟住變 — 唔知
 
 ## 附錄 Addenda
 

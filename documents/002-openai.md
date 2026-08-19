@@ -62,6 +62,78 @@ Preparedness designations)。diff嘅嘢:Preparedness Framework嘅版本同
   features — 家屬律師批評呢個回應
   ([TechCrunch](https://techcrunch.com/2025/11/26/openai-claims-teen-circumvented-safety-features-before-suicide-that-chatgpt-helped-plan))
 
+## 組織解剖 Cluster Anatomy
+
+### 單位 Units
+
+- 2023年以嚟成立嘅safety/mission units,四個已經冇咗:Superalignment
+  (2023-07生、2024-05散,兩位co-lead同期離職)
+  ([PopSci](https://www.popsci.com/technology/openai-dissolved-its-team-dedicated-to-preventing-rogue-ai/))、
+  AGI Readiness(2024-10散,senior advisor Miles Brundage離職)
+  ([LessWrong](https://www.lesswrong.com/posts/omzGEWqQJv6uP7D6k/miles-brundage-resigned-from-openai-and-his-agi-readiness))、
+  Mission Alignment(2024生、2026-02散,得七個人)
+  ([TechCrunch](https://techcrunch.com/2026/02/11/openai-disbands-mission-alignment-team-which-focused-on-safe-and-trustworthy-ai-development/))、
+  Model Behavior(2025-09併入Post Training)
+  ([AI Insider](https://theaiinsider.tech/2025/09/09/openai-restructures-model-behavior-team-as-joanne-jang-launches-oai-labs/))
+- Preparedness(2023-10生)2026年7月被「重組」— FT報導用disbanded,
+  OpenAI唔認個詞但認個reorg
+  ([TNW](https://thenextweb.com/news/openai-preparedness-team-disbanded-ipo-streamlining))
+- 仲生存:Collective Alignment(2024-01生,公眾input入model behavior)
+  ([The Decoder](https://the-decoder.com/openais-collective-alignment-team-aims-to-make-ai-more-democratic/))、
+  Safety Advisory Group(framework內建review body)
+  ([PF v2 PDF](https://cdn.openai.com/pdf/18a02b5d-6b67-4cec-ab64-68cdfbddebcd/preparedness-framework-v2.pdf))
+
+### 揸Gate嘅手 The Hands on the Gate
+
+- Preparedness Framework v2寫明:SAG負責review同建議,**最終deploy
+  決定權喺leadership**
+  ([PF v2 PDF](https://cdn.openai.com/pdf/18a02b5d-6b67-4cec-ab64-68cdfbddebcd/preparedness-framework-v2.pdf));
+  2023年12月嘅beta版曾俾board有權overrule CEO
+  ([TechCrunch](https://techcrunch.com/2023/12/18/openai-buffs-safety-team-and-gives-board-veto-power-on-risky-ai/))
+- Safety and Security Committee 2024年9月改組成獨立board oversight
+  committee
+  ([Euronews](https://www.euronews.com/next/2024/09/17/openais-safety-group-to-become-independent-with-sam-altman-no-longer-on-the-committee)),
+  Altman同時退出委員會
+  ([TIME](https://time.com/7022026/sam-altman-safety-committee/))
+- 2025年10月recapitalization後,nonprofit OpenAI Foundation控制
+  for-profit OpenAI Group PBC
+  ([tracker](https://aifundingtracker.com/who-owns-openai/));
+  Microsoft約27%、現/前員工同投資者約47%
+  ([analysis](https://valueaddvc.com/blog/openai-s-for-profit-conversion-what-the-restructuring-means-for-investors-and-employees))
+- Board撤CEO嘅權力用過一次:2023年11月17日炒Altman — 幾日後佢復任,
+  board換咗人
+  ([PBS](https://www.pbs.org/newshour/nation/sam-altman-reinstated-as-openai-ceo-with-new-board-replacing-the-one-which-fired-him))
+
+### 隱形Cluster Invisible Clusters
+
+- TIME 2023年調查(內部文件+糧單):vendor Sama喺肯亞請嘅data labelers
+  篩毒性內容,時薪少於$2
+  ([TIME](https://time.com/6247678/openai-chatgpt-kenya-workers/));
+  2023年7月肯亞工人公開要求立法者調查工作環境
+  ([TechCrunch](https://techcrunch.com/2023/07/14/workers-that-made-chatgpt-less-harmful-ask-lawmakers-to-stem-alleged-exploitation-by-big-tech))
+- Red Teaming Network:2023年9月起外聘有償領域專家做pre-deployment
+  評估
+  ([TechCrunch](https://techcrunch.com/2023/09/19/openai-launches-a-red-teaming-network-to-make-its-models-more-robust/))
+- 2025年6月Meta以$143億入股Scale AI後,OpenAI棄用Scale做data provider
+  ([TechCrunch](https://techcrunch.com/2025/06/18/openai-drops-scale-ai-as-a-data-provider-following-meta-deal/))
+
+### 出門把聲 Exit & Voice
+
+- 2024年5月Vox攞到嘅文件顯示:離職協議可以取消vested equity;內部memo
+  隨後釋放前員工
+  ([NBC](https://www.nbcnewyork.com/news/national-international/openai-sends-internal-memo-releasing-former-employees-from-controversial-exit-agreements/5443043/));
+  Altman公開道歉話唔知有呢條、話從未真係claw back過
+  ([Euronews](https://www.euronews.com/next/2024/05/20/openai-changes-exit-contracts-so-employees-can-leave-without-having-equity-revoked));
+  後續報導指公司曾照樣就equity施壓
+  ([The Zvi](https://thezvi.substack.com/p/openai-fallout))
+- 2024年7月有SEC whistleblower complaint指NDA違反whistleblower保護
+  ([report](https://whistleblowersblog.org/corporate-whistleblowers/sec-whistleblowers/openai-whistleblowers-file-complaint-with-sec-on-illegal-ndas/));
+  Grassley參議員就NDA做法去信OpenAI
+  ([letter](https://www.grassley.senate.gov/download/grassley-to-openai_-ndas?download=1))
+- 2024年6月「Right to Warn」公開信:11個現任/前OpenAI員工(加2個
+  DeepMind)要求AI公司保障批評權
+  ([TIME](https://time.com/6985504/openai-google-deepmind-employees-letter/))
+
 ## 我哋真係唔知 What We Genuinely Don't Know
 
 - GPT-5/5.6系嘅training data組成冇披露
@@ -73,6 +145,9 @@ Preparedness designations)。diff嘅嘢:Preparedness Framework嘅版本同
 - 私人公司、冇audited財務報表 — 所有收入/run-rate數字都係press估算
 - 有search結果提及一份「Frontier Governance Framework」(2026年5月)
   凌駕於Preparedness Framework之上,但搵唔到primary URL — 存疑
+- Preparedness各risk area而家邊個team揸、Capabilities/Safeguards
+  Reports邊個author邊個簽 — 重組後唔知
+- Superalignment嗰20% compute承諾有冇兌現過 — 報導質疑,冇定論
 
 ## 附錄 Addenda
 

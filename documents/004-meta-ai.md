@@ -64,6 +64,63 @@ weights開唔開(公告咗但未見repo — 見unknowns)。本文件所有claim�
   benchmark方隨後更新提交政策
   ([TechCrunch](https://techcrunch.com/2025/04/11/metas-vanilla-maverick-ai-model-ranks-below-rivals-on-a-popular-chat-benchmark))
 
+## 組織解剖 Cluster Anatomy
+
+### 單位 Units
+
+- Responsible AI team(2019生)2023年11月拆散,大部分成員調去
+  generative AI product組
+  ([CNBC](https://www.cnbc.com/2023/11/18/facebook-parent-meta-breaks-up-its-responsible-ai-team.html))
+- ESM protein team(FAIR入面做ESMFold嗰隊)2023年被裁 — 八位創始成員
+  成隊走去開EvolutionaryScale
+  ([Forbes](https://www.forbes.com/sites/kenrickcai/2023/08/25/evolutionaryscale-ai-biotech-startup-meta-researchers-funding/))
+- 2025年6月30日Zuckerberg備忘錄成立MSL,Chief AI Officer = 前Scale AI
+  CEO Alexandr Wang
+  ([CNBC](https://www.cnbc.com/2025/06/30/mark-zuckerberg-creating-meta-superintelligence-labs-read-the-memo.html));
+  8月四分:TBD Lab、FAIR、Products and Applied Research(Nat Friedman
+  領導)、MSL Infra
+  ([Built In](https://builtin.com/artificial-intelligence/meta-superintelligence-reorg) /
+  [Wikipedia](https://en.wikipedia.org/wiki/Meta_Superintelligence_Labs))
+- Press報導確認MSL內有director-of-alignment角色
+  ([SF Standard](https://sfstandard.com/2026/02/25/openclaw-goes-rogue/))
+
+### 揸Gate嘅手 The Hands on the Gate
+
+- Advanced AI Scaling Framework v2寫到明:**Chief AI Officer**
+  「oversees the design, implementation, and operation of the entire
+  evaluation and mitigation」流程
+  ([framework](https://ai.meta.com/static-resource/Meta_Advanced-AI-Scaling-Framework-v2))
+  — 即係個gate嘅第一揸手就係Wang,一位經$143億投資入門嘅前vendor CEO
+  ([CNBC](https://www.cnbc.com/2025/06/30/mark-zuckerberg-creating-meta-superintelligence-labs-read-the-memo.html))
+- 最終stop button得一個人:Zuckerberg持約99.7%嘅Class B super-voting
+  股份,結構上唔可以被股東罷免
+  ([Legal Clarity](https://legalclarity.org/who-really-owns-meta-shareholders-and-share-structure/))
+- 框架承諾good-faith報告違規嘅員工「will be explicitly protected」
+  ([framework](https://ai.meta.com/static-resource/Meta_Advanced-AI-Scaling-Framework-v2))
+
+### 隱形Cluster Invisible Clusters
+
+- 供應鏈同lab結構性融合:$143億入股annotation vendor Scale AI,
+  vendor嘅CEO變成lab主帥
+  ([Silicon Republic](https://www.siliconrepublic.com/business/meta-superintelligence-labs-600-job-cuts))
+- Washington Post 2023年報導:菲律賓Remotasks平台一萬個以上工人做
+  labeling,36位受訪者中34位講述欠薪/低薪
+  ([BHRRC](https://www.business-humanrights.org/en/latest-news/philippines-scale-ai-creating-race-to-the-bottom-as-outsourced-workers-face-poor-conditions-in-digital-sweatshops-incl-low-wages-withheld-payments/))
+- 肯亞content moderators訴訟:2024年9月上訴庭裁定Meta可以喺肯亞法院
+  被告,案件繼續
+  ([BHRRC](https://www.business-humanrights.org/en/latest-news/court-of-appeal-rules-meta-can-be-sued-in-kenyan-courts-over-layoffs-of-content-moderators/))
+
+### 出門把聲 Exit & Voice
+
+- NLRB行政法官裁定2022-23大裁員嘅separation agreements(約7,236人簽)
+  違法
+  ([Scripps](https://www.scrippsnews.com/business/jobs-employment/judge-says-metas-mass-layoff-separation-agreements-were-unlawful))
+- Wynn-Williams 2026年6月入稟聯邦法院,要求撤銷基於2017年severance
+  non-disparagement條款嘅arbitration gag order
+  ([Selendy Gay](https://www.selendygay.com/news/general/2026-06-25-meta-sued-over-surveillance-and-gag-order-silencing-whistleblower-sarah-wynn-williams))
+- 最高層嘅exit voice有公開行使:LeCun離開時公開評論研究自主權
+  ([The Decoder](https://the-decoder.com/you-certainly-dont-tell-a-researcher-like-me-what-to-do-says-lecun-as-he-exits-meta-for-his-own-startup/))
+
 ## 我哋真係唔知 What We Genuinely Don't Know
 
 - Llama 4同Muse Spark嘅training data組成,高層描述以外冇披露
@@ -78,6 +135,10 @@ weights開唔開(公告咗但未見repo — 見unknowns)。本文件所有claim�
   listing同Meta自己嘅引述)
 - 任何一單政府/defense合作嘅金額或條款
 - 可歸屬AI產品嘅收入(Meta唔break out)
+- Framework承諾嘅Preparedness Reports同Model Spec(2026年4月版)
+  出咗未 — 未搵到
+- 個gate嘅半衰期本身係活問題:framework兩個named gate-holder角色
+  都由2025年先入職嘅人揸緊 — 呢啲手仲會唔會喺度,唔知
 
 ## 附錄 Addenda
 
