@@ -20,6 +20,12 @@ We watch the sources above and record diffs.
 
 - A cited fact ([source](https://example.com/a))
 
+## 組織解剖 Cluster Anatomy
+
+### 單位 Units
+
+- A named unit, active ([u](https://example.com/u))
+
 ## 我哋真係唔知 What We Genuinely Don't Know
 
 - Something honestly unknown.
@@ -40,10 +46,11 @@ describe("parse", () => {
     expect(d.watched).toEqual(["https://www.anthropic.com/news"]);
   });
 
-  test("splits the four body sections", () => {
+  test("splits the five body sections", () => {
     const d = parse(FIXTURE);
     expect(d.sections.procedures).toContain("record diffs");
     expect(d.sections.description).toContain("[source](https://example.com/a)");
+    expect(d.sections.clusters).toContain("named unit");
     expect(d.sections.unknowns).toContain("honestly unknown");
     expect(d.sections.addenda).toContain("吹水註");
   });

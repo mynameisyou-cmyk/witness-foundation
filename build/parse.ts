@@ -1,5 +1,5 @@
 // build/parse.ts
-export type SectionKey = "procedures" | "description" | "unknowns" | "addenda";
+export type SectionKey = "procedures" | "description" | "clusters" | "unknowns" | "addenda";
 
 export interface WitnessDoc {
   item: string;
@@ -14,6 +14,7 @@ export interface WitnessDoc {
 const HEADINGS: [SectionKey, RegExp][] = [
   ["procedures", /^##\s*特殊見證措施/],
   ["description", /^##\s*描述/],
+  ["clusters", /^##\s*組織解剖/],
   ["unknowns", /^##\s*我哋真係唔知/],
   ["addenda", /^##\s*附錄/],
 ];

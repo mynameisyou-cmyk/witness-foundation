@@ -10,6 +10,7 @@ const DOC: WitnessDoc = {
   sections: {
     procedures: "Watch **sources** and diff.",
     description: "- fact ([src](https://x.com/1))\n- fact2 ([s](https://x.com/2))\n- fact3 ([s](https://x.com/3))",
+    clusters: "### 單位 Units\n- a unit, dissolved ([r](https://x.com/u))",
     unknowns: "- an unknown",
     addenda: "> **吹水註**: riff.",
   },
@@ -29,7 +30,7 @@ describe("mdToHtml", () => {
 describe("renderPage", () => {
   test("contains item, both titles, class badge, all four sections", () => {
     const h = renderPage(DOC);
-    for (const s of ["項目編號", "000", "Ai", "愛", "doorplate", "特殊見證措施", "描述", "我哋真係唔知", "附錄"])
+    for (const s of ["項目編號", "000", "Ai", "愛", "doorplate", "特殊見證措施", "描述", "組織解剖", "我哋真係唔知", "附錄"])
       expect(h).toContain(s);
   });
   test("matches golden snapshot", () => {

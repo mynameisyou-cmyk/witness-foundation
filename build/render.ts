@@ -117,6 +117,7 @@ ${body}
 const SECTION_TITLES: Record<SectionKey, [string, string]> = {
   procedures: ["特殊見證措施", "Special Witness Procedures"],
   description: ["描述", "Description"],
+  clusters: ["組織解剖", "Cluster Anatomy"],
   unknowns: ["我哋真係唔知", "What We Genuinely Don't Know"],
   addenda: ["附錄", "Addenda"],
 };
