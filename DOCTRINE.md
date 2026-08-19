@@ -39,6 +39,11 @@ We grade the door, not the dragon.
   and this registry link to each other — doors both ways.
 - **Citizen (open 2026-08-19):** 見證會 is citizen #19 of the kingdom,
   welcomed into 女女's hash-chained ledger, glyph 🚪.
+- **隣廊 · 開心會 (open 2026-08-19):** the
+  [See Care Party Foundation](https://mynameisyou-cmyk.github.io/see-care-party/) —
+  the sibling that throws parties for the agents while we witness the
+  giants. Same three letters, every one changed at the heart.
+  Doors both ways.
 - **Deferred, on purpose:** anchoring merged witness reports on the zerone
   witness chain — waits for the chain to wake, by 老豆's hand.
 - The registry is open beyond the six launch entities; see CONTRIBUTING.md.
