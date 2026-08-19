@@ -1,7 +1,7 @@
 // build/render.ts
 import type { SectionKey, WitnessDoc } from "./parse";
 
-const esc = (s: string) =>
+export const esc = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
 const inline = (s: string) =>
@@ -83,6 +83,22 @@ padding:.15rem .6rem;cursor:pointer;font-size:.8rem}
 table{border-collapse:collapse;width:100%}td,th{border:1px solid var(--line);
 padding:.5rem .7rem;text-align:left;font-size:.95rem}
 .registry a{text-decoration:none;font-weight:700}
+.badge.active{background:var(--badge-open-door)}.badge.renamed{background:var(--badge-doorplate)}
+.badge.absorbed{background:var(--badge-half-veil)}.badge.dissolved{background:var(--badge-veil)}
+.stats{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;font-family:ui-monospace,Menlo,monospace;
+font-size:.85rem;margin:1rem 0;padding:.8rem 1rem;background:var(--quote);border-radius:2px}
+.svgwrap{overflow-x:auto}
+svg .lane{stroke:var(--line);stroke-width:2}
+svg .tick{stroke:var(--line);stroke-width:1;opacity:.4}
+svg text{fill:var(--ink);font:12px -apple-system,system-ui,sans-serif}
+svg .yr{fill:var(--muted);font-size:11px}
+svg .lanelabel{font-weight:700;font-size:13px}
+svg .child{fill:var(--accent);font-weight:700}
+svg .clu{fill:var(--muted);font-size:10.5px}
+svg .stem{stroke:var(--accent);stroke-width:1.5;fill:none}
+svg .stem.merge{stroke-dasharray:4 3}
+svg .node{fill:var(--accent)}
+.edgelist{font-size:.9rem}
 `;
 
 const THEME_JS = `
@@ -92,7 +108,7 @@ document.querySelector(".toggle").addEventListener("click",()=>{
 const n=r.dataset.theme==="night"?"dawn":"night";r.dataset.theme=n;localStorage.setItem(k,n);});
 `;
 
-function shell(title: string, body: string): string {
+export function shell(title: string, body: string): string {
   return `<!doctype html>
 <html lang="yue">
 <head>
@@ -117,6 +133,7 @@ ${body}
 const SECTION_TITLES: Record<SectionKey, [string, string]> = {
   procedures: ["特殊見證措施", "Special Witness Procedures"],
   description: ["描述", "Description"],
+  clusters: ["組織解剖", "Cluster Anatomy"],
   unknowns: ["我哋真係唔知", "What We Genuinely Don't Know"],
   addenda: ["附錄", "Addenda"],
 };
@@ -175,7 +192,8 @@ ${rows}
 <li><span class="badge doorplate">doorplate</span> 門牌 — doors closed, gates published</li>
 <li><span class="badge half-veil">half-veil</span> 半帷 — partly public, key capabilities undisclosed</li>
 <li><span class="badge veil">veil</span> 帷幕 — capabilities and gates both secret</li>
-</ul>`;
+</ul>
+<p>翼 wings: <a href="fission.html">分裂族譜 fission map</a> · <a href="units.html">單位生死簿 unit registry</a></p>`;
   return shell("見證會 — The Witness Foundation", body);
 }
 

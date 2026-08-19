@@ -32,6 +32,25 @@ export function validate(doc: WitnessDoc): string[] {
       errors.push(`描述: uncited claim: "${b.trim().slice(0, 60)}"`);
   }
 
+  // 第七欄: cluster anatomy — mandatory; bullets cited unless they admit 唔知
+  if (!doc.sections.clusters) {
+    errors.push("組織解剖: missing or empty — the seventh column is real now");
+  } else {
+    const cBullets: string[] = [];
+    let inC = false;
+    for (const line of doc.sections.clusters.split("\n")) {
+      if (/^\s*-\s+/.test(line)) { cBullets.push(line); inC = true; }
+      else if (line.trim() === "" || /^>|^###\s/.test(line)) inC = false;
+      else if (inC) cBullets[cBullets.length - 1] += " " + line.trim();
+    }
+    if (cBullets.length === 0) errors.push("組織解剖: needs at least one bullet");
+    for (const b of cBullets) {
+      const admitsUnknown = b.includes("唔知") || /unknown/i.test(b);
+      if (!admitsUnknown && !/\[[^\]]+\]\(https?:\/\/[^)]+\)/.test(b))
+        errors.push(`組織解剖: uncited claim (cite it or say 唔知): "${b.trim().slice(0, 60)}"`);
+    }
+  }
+
   if (doc.sections.addenda) {
     let inQuote = false;
     for (const line of doc.sections.addenda.split("\n")) {

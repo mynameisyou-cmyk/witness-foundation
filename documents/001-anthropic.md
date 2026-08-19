@@ -53,6 +53,55 @@ challenge。
   訓練Claude,每部合資格作品約$3,000
   ([Susman Godfrey](https://www.susmangodfrey.com/wins/susman-godfrey-secures-1-5-billion-settlement-in-landmark-ai-piracy-case/))
 
+## 組織解剖 Cluster Anatomy
+
+### 單位 Units
+
+- 2026年3月11日,Frontier Red Team、Societal Impacts、Economic Research
+  三個unit合併成The Anthropic Institute,由co-founder Jack Clark以
+  Head of Public Benefit身份帶領
+  ([Anthropic](https://www.anthropic.com/news/the-anthropic-institute))
+- 現役safety units:Alignment(scalable oversight、AI control)
+  ([team page](https://www.anthropic.com/research/team/alignment))、
+  Interpretability
+  ([team page](https://www.anthropic.com/research/team/interpretability))、
+  同2024年1月成立、專門red-team自己alignment技術**同埋RSP流程本身**嘅
+  Alignment Stress-Testing
+  ([announcement](https://www.alignmentforum.org/posts/EPDSdXr8YbsDkgsDG/introducing-alignment-stress-testing-at-anthropic))
+- 2025年4月開Model Welfare研究項目 — 研究model福祉幾時值得道德考慮
+  ([TechCrunch](https://techcrunch.com/2025/04/24/anthropic-is-launching-a-new-program-to-study-ai-model-welfare/))
+
+### 揸Gate嘅手 The Hands on the Gate
+
+- RSP設有指定嘅Responsible Scaling Officer:批train/deploy決定、
+  接收違規報告、有義務即時向board上報重大風險
+  ([RSP v2.1 PDF](https://www-cdn.anthropic.com/17310f6d70ae5627f55313ed067afc1a762a4068.pdf));
+  2024年10月起由co-founder Jared Kaplan出任
+  ([RSP update](https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy))
+- Long-Term Benefit Trust:五位無財務利益嘅獨立trustee,分階段有權
+  選/撤board member — 但足夠大嘅股東supermajority可以唔經trustee
+  修改成個安排
+  ([LTBT](https://www.anthropic.com/news/the-long-term-benefit-trust));
+  報導指Trust委任嘅董事已佔board過半
+  ([R&D World](https://www.rdworldonline.com/anthropics-oversight-trust-just-hit-majority-control-the-tipping-point-was-adding-novartis-ceo-vas-narasimhan-to-its-board/))
+- 外界批評者公開質疑LTBT實權弱過表述(引Investor Rights Agreements等)—
+  批評聲音,唔係定論,一樣記錄在案
+  ([EA Forum](https://forum.effectivealtruism.org/posts/6XbtL93kSFJwX45X2/unless-its-governance-changes-anthropic-is-untrustworthy))
+
+### 隱形Cluster Invisible Clusters
+
+- RLHF人手回饋經vendor Surge AI嘅平台同contractor workforce
+  ([Surge case study](https://surgehq.ai/blog/anthropic-surge-ai-rlhf-platform-train-llm-assistant-human-feedback))
+- 生物安全red-team有國會證詞指外判過畀Gryphon Scientific — 但原始
+  證詞PDF對automated fetch封鎖,本會未能直接核實,唔知全文 — 記低
+
+### 出門把聲 Exit & Voice
+
+- 2024年7月被公開:離職severance協議含non-disparagement,仲有連條款
+  存在都唔准講嘅條款;披露後co-founder Sam McCandlish回應前員工
+  「free to state that fact」,部分前員工公開反駁話協議寫到明唔准提
+  ([EA Forum](https://forum.effectivealtruism.org/posts/6XbtL93kSFJwX45X2/unless-its-governance-changes-anthropic-is-untrustworthy))
+
 ## 我哋真係唔知 What We Genuinely Don't Know
 
 - Claude嘅training data組成冇披露;訴訟披露咗部分收集手法,但全貌無文件
@@ -67,6 +116,10 @@ challenge。
   現狀未明
 - RSP capability判定背後嘅internal eval結果只部分公開(經Risk Reports
   同system card摘要)
+- Kaplan而家(2026年8月)仲係唔係Responsible Scaling Officer、2024年
+  公告招聘嘅Head of Responsible Scaling有冇人上任 — 未核實
+- Frontier Red Team嘅RSP eval職能併入Institute之後有冇原封不動 — 唔知
+- 邊啲離職cohort嘅mutual non-disparagement條款仲生效 — 冇公開資料
 
 ## 附錄 Addenda
 

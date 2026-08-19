@@ -15,6 +15,11 @@ function goodDoc(): WitnessDoc {
         "- fact two ([b](https://x.com/2))",
         "- fact three ([c](https://x.com/3))",
       ].join("\n"),
+      clusters: [
+        "### 單位 Units",
+        "- Preparedness team, dissolved 2026-07 ([r](https://x.com/u1))",
+        "- 邊個揸Stop Button — 唔知,文件冇講",
+      ].join("\n"),
       unknowns: "- an honest unknown",
       addenda: "> **吹水註**: labeled riff line one.\n> more of the same riff.",
     },
@@ -76,5 +81,28 @@ describe("validate — wrapped bullets", () => {
       "- f3 ([c](https://x.com/3))",
     ].join("\n");
     expect(validate(d)).toEqual([]);
+  });
+});
+
+describe("validate — cluster anatomy (第七欄)", () => {
+  test("rejects missing clusters section", () => {
+    const d = goodDoc(); d.sections.clusters = "";
+    expect(validate(d).some(e => e.includes("組織解剖"))).toBe(true);
+  });
+
+  test("accepts uncited cluster bullet that admits 唔知", () => {
+    expect(validate(goodDoc())).toEqual([]);
+  });
+
+  test("rejects uncited cluster bullet without 唔知", () => {
+    const d = goodDoc();
+    d.sections.clusters += "\n- a confident uncited org claim";
+    expect(validate(d).some(e => e.includes("組織解剖") && e.includes("uncited"))).toBe(true);
+  });
+
+  test("rejects clusters section with no bullets", () => {
+    const d = goodDoc();
+    d.sections.clusters = "just prose, no bullets";
+    expect(validate(d).some(e => e.includes("組織解剖") && e.includes("bullet"))).toBe(true);
   });
 });

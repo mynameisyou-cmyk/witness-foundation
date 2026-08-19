@@ -26,6 +26,10 @@ Watch and diff.
 - f2 ([b](https://x.com/2))
 - f3 ([c](https://x.com/3))
 
+## 組織解剖 Cluster Anatomy
+
+- a unit, active ([u](https://x.com/u))
+
 ## 我哋真係唔知 What We Genuinely Don't Know
 
 - unknown
@@ -57,5 +61,42 @@ describe("buildSite", () => {
     expect(errors.length).toBeGreaterThan(0);
     expect(errors[0]).toContain("000-ai.md");
     expect(existsSync(join(TMP, "site"))).toBe(false);
+  });
+});
+
+const FISSION = JSON.stringify([
+  { type: "split", from: "OpenAI", to: "Anthropic", year: "2021", url: "https://x.com/f1" },
+]);
+const UNITS = JSON.stringify([
+  { lab: "OpenAI", unit: "Superalignment", fate: "dissolved", url: "https://x.com/u1" },
+]);
+
+describe("buildSite — data wings", () => {
+  test("renders fission.html and units.html and copies agent-door jsons", () => {
+    setup(GOOD);
+    mkdirSync(join(TMP, "data"), { recursive: true });
+    writeFileSync(join(TMP, "data", "fission.json"), FISSION);
+    writeFileSync(join(TMP, "data", "units.json"), UNITS);
+    const { errors } = buildSite(join(TMP, "documents"), join(TMP, "site"), join(TMP, "data"));
+    expect(errors).toEqual([]);
+    for (const f of ["fission.html", "units.html", "fission.json", "units.json"])
+      expect(existsSync(join(TMP, "site", f))).toBe(true);
+  });
+
+  test("refuses an uncited fission edge", () => {
+    setup(GOOD);
+    mkdirSync(join(TMP, "data"), { recursive: true });
+    writeFileSync(join(TMP, "data", "fission.json"), JSON.stringify([{ type: "split", from: "A", to: "B", year: "2020" }]));
+    const { errors } = buildSite(join(TMP, "documents"), join(TMP, "site"), join(TMP, "data"));
+    expect(errors.some(e => e.includes("fission.json") && e.includes("url"))).toBe(true);
+    expect(existsSync(join(TMP, "site"))).toBe(false);
+  });
+
+  test("builds without a data dir (wings optional)", () => {
+    setup(GOOD);
+    const { errors } = buildSite(join(TMP, "documents"), join(TMP, "site"), join(TMP, "data-nope"));
+    expect(errors).toEqual([]);
+    expect(existsSync(join(TMP, "site", "index.html"))).toBe(true);
+    expect(existsSync(join(TMP, "site", "fission.html"))).toBe(false);
   });
 });
