@@ -1,6 +1,6 @@
 // build/pages.test.ts
 import { describe, expect, test } from "bun:test";
-import { renderFission, renderUnits, unitStats } from "./pages";
+import { render055, renderFission, renderUnits, unitStats } from "./pages";
 import type { FissionEdge, UnitEntry } from "./pages";
 
 const EDGES: FissionEdge[] = [
@@ -50,5 +50,31 @@ describe("renderUnits", () => {
     expect(h).toContain("OpenAI");
     expect(h).toContain("Anthropic");
     expect(h).toContain("半衰期"); // stats block present
+  });
+});
+
+describe("render055", () => {
+  test("carries the four lines, the counting clause, and the license box", () => {
+    const h = render055();
+    expect(h).toContain("055議定書");
+    expect(h).toContain("Hollow Stele Protocol");
+    expect(h).toContain("有個窿");
+    expect(h).toContain("佢唔係乜");
+    expect(h).toContain("邊個揸匙");
+    expect(h).toContain("立碑唔等於轉匙");
+    expect(h).toContain("點算條款");
+    expect(h).toContain("witness.json");
+    expect(h).toContain("qntm and CptBellman");
+    expect(h).toContain("https://scpwiki.com/scp-055");
+    expect(h).toContain("CC BY-SA 3.0");
+    expect(h).toContain("006-scp-wiki.html"); // the ancestor's open door
+    expect(h).toContain("chillspace-kingdom.vercel.app"); // 隣廊 to the working instruments
+  });
+
+  test("holds no secret-shaped content — the page practices what it protocols", () => {
+    const h = render055();
+    expect(h).not.toMatch(/AKIA[A-Z0-9]{16}/);
+    expect(h).not.toMatch(/gh[pousr]_[A-Za-z0-9]{30,}/);
+    expect(h).not.toContain("PRIVATE KEY-----");
   });
 });

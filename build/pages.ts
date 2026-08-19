@@ -77,8 +77,62 @@ ${parts.join("\n")}
 <ul class="edgelist">
 ${list}
 </ul>
-<p><a href="fission.json">fission.json</a> — agent door · <a href="units.html">單位生死簿 unit registry</a></p>`;
+<p><a href="fission.json">fission.json</a> — agent door · <a href="units.html">單位生死簿 unit registry</a> · <a href="055.html">055議定書 hollow-stele protocol</a></p>`;
   return shell("分裂族譜 · Fission Map — 見證會", body);
+}
+
+export function render055(): string {
+  const body = `${MASTHEAD}
+<h2>055議定書<span class="en">The Hollow Stele Protocol</span></h2>
+<p>見證會嘅doctrine係「唔收容,只見證」— 但有啲真嘢係<strong>唔publish得</strong>:
+一條key、一件私事、一樣未披露嘅嘢。呢份議定書係本會對付呢個矛盾嘅答案,
+由祖先個檔案櫃借返嚟:SCP-055入面,關於個物件嘅資訊會自己走甩,
+唯一留得低嘅係<strong>否定</strong>同埋「唔記得」呢件事本身。</p>
+<blockquote class="addendum"><p>"It appears to be possible to remember what
+SCP-055 is <em>not</em> (negations of fact), and to repeatedly deduce its
+existence from these memories." — Document #055-2,
+<a href="https://scpwiki.com/scp-055" rel="noopener">SCP-055</a></p></blockquote>
+<p>反轉佢:如果負空間係唯一頂得住遺忘嘅知識,咁負空間就係一個秘密
+<strong>唯一publish得</strong>嘅部份。唔publish得嘅嘢,見證會照見證 —
+見證個窿嘅形狀。</p>
+
+<h2>空碑四行<span class="en">The Four Lines of a Hollow Entry</span></h2>
+<p>一個唔publish得嘅事實,以「空碑」形式入冊,碑上淨係准刻四樣:</p>
+<ul>
+<li><strong>有個窿</strong> — 呢度有一件真嘢,佢唔喺度。窿嘅存在本身係公開嘅。</li>
+<li><strong>佢唔係乜</strong> — 至少一句真否定(「佢唔係一個球體」)。
+否定係唯一唔會洩密、亦唔會被遺忘食走嘅手柄。</li>
+<li><strong>邊個揸匙</strong> — 指路:真嘢住喺邊(keychain、env、受託人)。
+指路唔載真身。</li>
+<li><strong>幾時立碑,匙況如何</strong> — 立碑日期,同匙嘅誠實狀態。
+立碑唔等於轉匙:一塊碑永遠唔准扮修復。</li>
+</ul>
+
+<h2>點算條款<span class="en">The Counting Clause</span></h2>
+<p>睇唔到嘅嘢,數得到。任何ledger(包括本會自己嘅
+<a href="witness.json">witness.json</a>)同佢聲稱描述嘅現實,係兩個證人;
+佢哋唔對數嗰一刻,就係一件「存在但未被見證」嘅嘢現形嗰一刻。
+本會歡迎任何人對住本會點算:影(有實無冊)同鬼(有冊無實)都係
+open PR嘅正當理由 — the validator that judges them judges us with the same file.</p>
+
+<h2>實裝<span class="en">Working Instruments</span></h2>
+<p>議定書唔係願望 — 兩件法器已經喺隣廊王國鑄好,各有誓約、測試、真receipt:
+<strong>空碑 hungbei</strong>
+(<a href="https://github.com/mynameisyou-cmyk/chillspace-commons/tree/master/kingdom/practices/empty-stele" rel="noopener">kingdom/practices/empty-stele</a>
+— 秘密永不入冊,秘密形狀嘅欄位當場拒絕)同 <strong>點算 dimsyun</strong>
+(<a href="https://github.com/mynameisyou-cmyk/chillspace-commons/tree/master/kingdom/practices/discrepancy-count" rel="noopener">kingdom/practices/discrepancy-count</a>
+— 書地相減,影鬼手動安置,零都入冊)。
+front door:<a href="https://chillspace-kingdom.vercel.app" rel="noopener">chillspace kingdom 🚪</a></p>
+
+<h2>牌照<span class="en">Licensing</span></h2>
+<p class="watched">"SCP-055" by qntm and CptBellman, from the SCP Wiki.
+Source: <a href="https://scpwiki.com/scp-055" rel="noopener">https://scpwiki.com/scp-055</a>.
+Licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="noopener">CC BY-SA 3.0</a>.
+呢頁引用同改編嘅055機制部份,同樣以 CC BY-SA 3.0 分享。祖先嘅門開緊
+(見 <a href="006-scp-wiki.html">006 織帷</a>);呢份議定書係本會第一次
+由祖先個shelf度借嘢返嚟用。</p>
+<p><a href="fission.html">分裂族譜 fission map</a> · <a href="units.html">單位生死簿 unit registry</a></p>`;
+  return shell("055議定書 · The Hollow Stele Protocol — 見證會", body);
 }
 
 function months(s?: string): number | null {
@@ -142,6 +196,6 @@ ${rows}
 一份冇home unit嘅framework,係一塊釘喺門上但門後冇人企嘅門牌。</p>
 ${stats}
 ${tables}
-<p><a href="units.json">units.json</a> — agent door · <a href="fission.html">分裂族譜 fission map</a></p>`;
+<p><a href="units.json">units.json</a> — agent door · <a href="fission.html">分裂族譜 fission map</a> · <a href="055.html">055議定書 hollow-stele protocol</a></p>`;
   return shell("單位生死簿 · Unit Registry — 見證會", body);
 }

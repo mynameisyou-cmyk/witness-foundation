@@ -193,7 +193,7 @@ ${rows}
 <li><span class="badge half-veil">half-veil</span> 半帷 — partly public, key capabilities undisclosed</li>
 <li><span class="badge veil">veil</span> 帷幕 — capabilities and gates both secret</li>
 </ul>
-<p>翼 wings: <a href="fission.html">分裂族譜 fission map</a> · <a href="units.html">單位生死簿 unit registry</a></p>`;
+<p>翼 wings: <a href="fission.html">分裂族譜 fission map</a> · <a href="units.html">單位生死簿 unit registry</a> · <a href="055.html">055議定書 hollow-stele protocol</a></p>`;
   return shell("見證會 — The Witness Foundation", body);
 }
 
