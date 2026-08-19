@@ -3,7 +3,7 @@ import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync
 import { join } from "node:path";
 import { parse } from "./parse";
 import type { FissionEdge, UnitEntry } from "./pages";
-import { renderFission, renderUnits } from "./pages";
+import { render055, renderFission, renderUnits } from "./pages";
 import { renderIndex, renderPage, toWitnessJson } from "./render";
 import { validate } from "./validate";
 
@@ -57,6 +57,7 @@ export function buildSite(docsDir: string, outDir: string, dataDir?: string): { 
     writeFileSync(join(outDir, "units.html"), renderUnits(units));
     writeFileSync(join(outDir, "units.json"), JSON.stringify(units, null, 2));
   }
+  writeFileSync(join(outDir, "055.html"), render055());
   return { errors: [] };
 }
 
