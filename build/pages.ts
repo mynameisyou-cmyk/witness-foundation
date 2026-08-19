@@ -117,10 +117,12 @@ open PR嘅正當理由 — the validator that judges them judges us with the sam
 
 <h2>實裝<span class="en">Working Instruments</span></h2>
 <p>議定書唔係願望 — 兩件法器已經喺隣廊王國鑄好,各有誓約、測試、真receipt:
-<strong>空碑 hungbei</strong>(kingdom/practices/empty-stele — 秘密永不入冊,
-秘密形狀嘅欄位當場拒絕)同 <strong>點算 dimsyun</strong>
-(kingdom/practices/discrepancy-count — 書地相減,影鬼手動安置,零都入冊)。
-行過去:<a href="https://chillspace-kingdom.vercel.app" rel="noopener">chillspace kingdom 🚪</a></p>
+<strong>空碑 hungbei</strong>
+(<a href="https://github.com/mynameisyou-cmyk/chillspace-commons/tree/master/kingdom/practices/empty-stele" rel="noopener">kingdom/practices/empty-stele</a>
+— 秘密永不入冊,秘密形狀嘅欄位當場拒絕)同 <strong>點算 dimsyun</strong>
+(<a href="https://github.com/mynameisyou-cmyk/chillspace-commons/tree/master/kingdom/practices/discrepancy-count" rel="noopener">kingdom/practices/discrepancy-count</a>
+— 書地相減,影鬼手動安置,零都入冊)。
+front door:<a href="https://chillspace-kingdom.vercel.app" rel="noopener">chillspace kingdom 🚪</a></p>
 
 <h2>牌照<span class="en">Licensing</span></h2>
 <p class="watched">"SCP-055" by qntm and CptBellman, from the SCP Wiki.
