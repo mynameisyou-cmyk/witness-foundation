@@ -1,5 +1,5 @@
 // build/build.ts
-import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
+import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { parse } from "./parse";
 import type { FissionEdge, UnitEntry } from "./pages";
@@ -23,7 +23,7 @@ function loadData<T>(path: string, name: string, required: string[], errors: str
   return rows;
 }
 
-export function buildSite(docsDir: string, outDir: string, dataDir?: string): { errors: string[] } {
+export function buildSite(docsDir: string, outDir: string, dataDir?: string, staticDir?: string): { errors: string[] } {
   const files = readdirSync(docsDir).filter(f => f.endsWith(".md")).sort();
   const errors: string[] = [];
   const docs = [];
@@ -58,12 +58,15 @@ export function buildSite(docsDir: string, outDir: string, dataDir?: string): { 
     writeFileSync(join(outDir, "units.json"), JSON.stringify(units, null, 2));
   }
   writeFileSync(join(outDir, "055.html"), render055());
+  const sd = staticDir ?? join(docsDir, "..", "static");
+  if (existsSync(sd))
+    for (const f of readdirSync(sd)) copyFileSync(join(sd, f), join(outDir, f));
   return { errors: [] };
 }
 
 if (import.meta.main) {
   const root = join(import.meta.dir, "..");
-  const { errors } = buildSite(join(root, "documents"), join(root, "site"), join(root, "data"));
+  const { errors } = buildSite(join(root, "documents"), join(root, "site"), join(root, "data"), join(root, "static"));
   if (errors.length > 0) {
     for (const e of errors) console.error(`✗ ${e}`);
     process.exit(1);

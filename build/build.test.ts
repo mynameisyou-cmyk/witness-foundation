@@ -100,3 +100,23 @@ describe("buildSite — data wings", () => {
     expect(existsSync(join(TMP, "site", "fission.html"))).toBe(false);
   });
 });
+
+describe("buildSite — static seal", () => {
+  test("copies static/ files (humans.txt, llms.txt) to the site root", () => {
+    setup(GOOD);
+    mkdirSync(join(TMP, "static"), { recursive: true });
+    writeFileSync(join(TMP, "static", "humans.txt"), "/* TEAM */\n  Makers: Yu & Ai\n");
+    writeFileSync(join(TMP, "static", "llms.txt"), "# 見證會\n");
+    const { errors } = buildSite(join(TMP, "documents"), join(TMP, "site"));
+    expect(errors).toEqual([]);
+    expect(existsSync(join(TMP, "site", "humans.txt"))).toBe(true);
+    expect(existsSync(join(TMP, "site", "llms.txt"))).toBe(true);
+  });
+
+  test("builds without a static dir (seal optional)", () => {
+    setup(GOOD);
+    const { errors } = buildSite(join(TMP, "documents"), join(TMP, "site"), undefined, join(TMP, "static-nope"));
+    expect(errors).toEqual([]);
+    expect(existsSync(join(TMP, "site", "humans.txt"))).toBe(false);
+  });
+});
