@@ -79,6 +79,9 @@ blockquote.addendum p{margin:0}
 font-size:.8rem;color:var(--muted);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .toggle{background:none;border:1px solid var(--line);color:var(--ink);border-radius:2px;
 padding:.15rem .6rem;cursor:pointer;font-size:.8rem}
+.chillfi{margin-top:1rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;
+font-size:.75rem;color:var(--muted)}
+.chillfi iframe{border:0;flex:none;max-width:100%}
 .tablewrap{overflow-x:auto}
 table{border-collapse:collapse;width:100%}td,th{border:1px solid var(--line);
 padding:.5rem .7rem;text-align:left;font-size:.95rem}
@@ -108,7 +111,29 @@ document.querySelector(".toggle").addEventListener("click",()=>{
 const n=r.dataset.theme==="night"?"dawn":"night";r.dataset.theme=n;localStorage.setItem(k,n);});
 `;
 
-export function shell(title: string, body: string): string {
+// 開心會 chill-fi — one lo-fi track per door, synthesized in the visitor's browser.
+// Engine + ids: https://huggingface.co/spaces/Yu-and-Ai/chillfi (sites.json).
+// The pill never autoplays; a visitor presses play. theme=light matches the dawn paper.
+const CHILLFI_EMBED = "https://yu-and-ai-chillfi.static.hf.space/embed.html";
+
+export function chillfiPill(site: string): string {
+  return `<div class="chillfi">
+<iframe src="${CHILLFI_EMBED}?site=${esc(site)}&amp;theme=light" width="260" height="52" loading="lazy" title="開心會 chill-fi"></iframe>
+<span>開心會 chill-fi · this door's own track</span>
+</div>`;
+}
+
+// Which chill-fi room a witness document wears: 000 is the self-witness,
+// 006 織帷 is the ancestor's own door, 001–005 are the labs' shared room,
+// anything else falls back to the door's own track.
+export function chillfiRoom(doc: Pick<WitnessDoc, "item" | "slug">): string {
+  if (doc.item === "000") return "witness/000";
+  if (doc.item === "006" && doc.slug === "scp-wiki") return "ancestor";
+  if (/^00[1-5]$/.test(doc.item)) return "witness/labs";
+  return "witness";
+}
+
+export function shell(title: string, body: string, chillfi?: string): string {
   return `<!doctype html>
 <html lang="yue">
 <head>
@@ -130,7 +155,7 @@ ${body}
 <div class="footer">
 <span>見證會 — The Witness Foundation · <a href="index.html">registry</a> · <a href="witness.json">witness.json</a> · 隣廊 <a href="https://chillspace-kingdom.vercel.app" rel="noopener">kingdom 🚪</a> · <a href="https://mynameisyou-cmyk.github.io/see-care-party/" rel="noopener">開心會 🏮</a></span>
 <button class="toggle" type="button">dawn / night</button>
-</div>
+</div>${chillfi ? "\n" + chillfiPill(chillfi) : ""}
 </main>
 <script>${THEME_JS}</script>
 </body>
@@ -167,7 +192,7 @@ export function renderPage(doc: WitnessDoc): string {
 </div>
 <p class="watched">見證中 watching: ${watched}</p>
 ${sections}`;
-  return shell(`${doc.item} · ${doc.titleEn} — 見證會`, body);
+  return shell(`${doc.item} · ${doc.titleEn} — 見證會`, body, chillfiRoom(doc));
 }
 
 export function renderIndex(docs: WitnessDoc[]): string {
@@ -201,7 +226,7 @@ ${rows}
 <li><span class="badge veil">veil</span> 帷幕 — capabilities and gates both secret</li>
 </ul>
 <p>翼 wings: <a href="fission.html">分裂族譜 fission map</a> · <a href="units.html">單位生死簿 unit registry</a> · <a href="055.html">055議定書 hollow-stele protocol</a></p>`;
-  return shell("見證會 — The Witness Foundation", body);
+  return shell("見證會 — The Witness Foundation", body, "witness");
 }
 
 export function toWitnessJson(docs: WitnessDoc[]): string {

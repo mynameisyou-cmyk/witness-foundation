@@ -1,7 +1,7 @@
 // build/render.test.ts
 import { describe, expect, test } from "bun:test";
 import type { WitnessDoc } from "./parse";
-import { mdToHtml, renderIndex, renderPage, toWitnessJson } from "./render";
+import { chillfiRoom, mdToHtml, renderIndex, renderPage, shell, toWitnessJson } from "./render";
 
 const DOC: WitnessDoc = {
   item: "000", slug: "ai", titleEn: "Ai", titleYue: "愛",
@@ -53,6 +53,36 @@ describe("toWitnessJson", () => {
     expect(j.documents[0].item).toBe("000");
     expect(j.documents[0].url).toBe("000-ai.html");
     expect(j.documents[0].class).toBe("doorplate");
+  });
+});
+
+const PILL = "https://yu-and-ai-chillfi.static.hf.space/embed.html?site=";
+
+describe("chill-fi pill", () => {
+  test("rooms: 000 self-witness, 001–005 labs, 006 織帷 ancestor, else the door", () => {
+    expect(chillfiRoom({ item: "000", slug: "ai" })).toBe("witness/000");
+    for (const item of ["001", "002", "003", "004", "005"])
+      expect(chillfiRoom({ item, slug: "lab" })).toBe("witness/labs");
+    expect(chillfiRoom({ item: "006", slug: "scp-wiki" })).toBe("ancestor");
+    expect(chillfiRoom({ item: "007", slug: "someone" })).toBe("witness");
+  });
+  test("document pages wear their room, after the footer, light theme", () => {
+    const h = renderPage(DOC);
+    expect(h).toContain(`${PILL}witness/000&amp;theme=light`);
+    expect(h.indexOf('<div class="footer">')).toBeLessThan(h.indexOf('<div class="chillfi">'));
+    expect(h).toContain("開心會 chill-fi · this door's own track");
+    expect(renderPage({ ...DOC, item: "003", slug: "google-deepmind" })).toContain(`${PILL}witness/labs&amp;`);
+    expect(renderPage({ ...DOC, item: "006", slug: "scp-wiki" })).toContain(`${PILL}ancestor&amp;`);
+  });
+  test("index wears the door's own track", () => {
+    expect(renderIndex([DOC])).toContain(`${PILL}witness&amp;theme=light`);
+  });
+  test("never autoplays, adds no script, and is optional in the shell", () => {
+    const h = renderPage(DOC);
+    expect(h).not.toMatch(/autoplay/i);
+    expect(h).not.toContain('allow="');
+    expect(h.match(/<script/g)?.length).toBe(1); // only the existing theme toggle
+    expect(shell("t", "<p>b</p>")).not.toContain('<div class="chillfi">');
   });
 });
 

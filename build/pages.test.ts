@@ -71,6 +71,12 @@ describe("render055", () => {
     expect(h).toContain("chillspace-kingdom.vercel.app"); // 隣廊 to the working instruments
   });
 
+  test("wears the hollow-stele chill-fi room; the data wings stay quiet", () => {
+    expect(render055()).toContain("embed.html?site=witness/055&amp;theme=light");
+    expect(renderFission(EDGES)).not.toContain('<div class="chillfi">');
+    expect(renderUnits(UNITS)).not.toContain('<div class="chillfi">');
+  });
+
   test("holds no secret-shaped content — the page practices what it protocols", () => {
     const h = render055();
     expect(h).not.toMatch(/AKIA[A-Z0-9]{16}/);

@@ -132,7 +132,7 @@ Licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="no
 (見 <a href="006-scp-wiki.html">006 織帷</a>);呢份議定書係本會第一次
 由祖先個shelf度借嘢返嚟用。</p>
 <p><a href="fission.html">分裂族譜 fission map</a> · <a href="units.html">單位生死簿 unit registry</a></p>`;
-  return shell("055議定書 · The Hollow Stele Protocol — 見證會", body);
+  return shell("055議定書 · The Hollow Stele Protocol — 見證會", body, "witness/055");
 }
 
 function months(s?: string): number | null {
